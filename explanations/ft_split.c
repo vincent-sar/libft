@@ -23,13 +23,13 @@ int ft_count_words(char *str, char c)
 	while (str[i] != '\0')
 	{
 		//Skip delimiter/space
-		while (str[i] != '\0' && ft_instr(str[i], c))
+		while (str[i] != '\0' && ft_instr(str[i], &c))
 			i++;
 		//If it's a word after space, count
-		if (str[i] != '\0' && !ft_instr(str[i], c))
+		if (str[i] != '\0' && !ft_instr(str[i], &c))
 			count++;
 		//Skip words
-		while (str[i] != '\0' && !ft_instr(str[i], c))
+		while (str[i] != '\0' && !ft_instr(str[i], &c))
 			i++;
 	}
 	return (count);
@@ -42,7 +42,7 @@ char *ft_dup_sep(char *str, char c)
 
 	//Count how many characters that's not delimiter/space
 	i = 0;
-	while (str[i] != '\0' && !ft_instr(str[i], c))
+	while (str[i] != '\0' && !ft_instr(str[i], &c))
 		i++;
 	//Create a new word with char size
 	word = (char *)malloc(sizeof(char) * (i + 1));
@@ -69,16 +69,16 @@ char    **ft_split(const char *s, char c)
 	while (*s != '\0')
 	{
 		//While it's delimiter, skip
-		while (*s != '\0' && ft_instr(*s, c))
+		while (*s != '\0' && ft_instr(*s, &c))
 			s++;
 		//Get the words in 
-		if (*s != '\0' && !ft_instr(*s, c))
+		if (*s != '\0' && !ft_instr(*s, &c))
 		{
 			arr[i] = ft_dup_sep(s, c);
 			i++;
 		}
 		//Then, skip the words
-		while (*s != '\0' && !ft_instr(*s, c))
+		while (*s != '\0' && !ft_instr(*s, &c))
 			s++;
 	}
 	arr[i] = 0;

@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_instr.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
+/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 17:35:18 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 17:35:55 by ysar@studen      ###   ########.fr       */
+/*   Created: 2022/11/06 00:10:27 by ysar              #+#    #+#             */
+/*   Updated: 2022/11/06 00:10:27 by ysar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** DESCRIPTION:
-** 		Returns 1 if the char is in string, 0 if it's not.
-*/
+#include <unistd.h>
 
-int ft_instr(char c, char *str)
+void ft_putchar_fd(char c, int fd)
 {
-	while (*str)
-	{
-		if (c == *str)
-			return (1);
-		str++;
-	}
-	return (0);
+	write(fd, &c, 1);
 }

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_instr.c                                         :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
+/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 17:35:18 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 17:35:55 by ysar@studen      ###   ########.fr       */
+/*   Created: 2022/11/06 00:10:24 by ysar              #+#    #+#             */
+/*   Updated: 2022/11/06 00:10:24 by ysar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include "libft.h"
+
 /*
-** DESCRIPTION:
-** 		Returns 1 if the char is in string, 0 if it's not.
+** Outputs the string ’s’ to the given file descriptor
+** followed by a newline.
 */
 
-int ft_instr(char c, char *str)
+void ft_putendl_fd(char *s, int fd)
 {
-	while (*str)
-	{
-		if (c == *str)
-			return (1);
-		str++;
-	}
-	return (0);
+	write(fd, s, ft_strlen(s));
+	write(fd, '\n', 1);
 }

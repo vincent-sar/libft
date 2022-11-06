@@ -11,13 +11,12 @@
 /* ************************************************************************** */
 
 /*
-** LIBRARY: <string.h>
-** SYNOPSIS: save a copy of a string (with malloc)
+** LIBRARY: N/A
+** SYNOPSIS: extract substring from string
 **
 ** DESCRIPTION:
-** 		The strdup() function allocates sufficient memory for a copy of the
-**	string s1, does the copy, and returns a pointer to it.  The pointer may
-**	subsequently be used as an argument to the function free(3).
+** 		Allocates (with malloc(3)) and returns a substring from the string ’s’.
+**	The substring begins at index ’start’ and is of maximum size ’len’.
 */
 
 #include "libft.h"
@@ -35,5 +34,6 @@ void	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start + len > s_len)
 		len = s_len - start;
 	ft_memmove(str, s + start, len);
+	str[len] = '\0';
 	return (str);
 }

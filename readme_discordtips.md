@@ -1,11 +1,16 @@
 # Detect leaks
-## System.leak compiled
 ```
 #include <stdio.h>
 #include <stdlib.h>
 
-system("leaks a.out");  //Add this at the last line of leak
+system("leaks a.out");  //Add this at the last line of main
 
+```
+
+or in compiler
+
+```
+ -fsanitize=address
 ```
 
 # Function Tests

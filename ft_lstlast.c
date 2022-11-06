@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_instr.c                                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
+/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 17:35:18 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 17:35:55 by ysar@studen      ###   ########.fr       */
+/*   Created: 2022/11/06 11:50:11 by ysar              #+#    #+#             */
+/*   Updated: 2022/11/06 11:50:11 by ysar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
+** LIBRARY: N/A
+** SYNOPSIS: find last element of list
+**
 ** DESCRIPTION:
-** 		Returns 1 if the char is in string, 0 if it's not.
+** 		Returns the last element of the list.
 */
 
-int ft_instr(char c, char *str)
+#include <unistd.h>
+#include "libft.h"
+
+t_list *ft_lstlast(t_list *lst)
 {
-	while (*str)
-	{
-		if (c == *str)
-			return (1);
-		str++;
-	}
-	return (0);
+	while (lst)
+		lst = lst->next;
+	return (lst);
 }

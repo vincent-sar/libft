@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_instr.c                                         :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
+/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 17:35:18 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 17:35:55 by ysar@studen      ###   ########.fr       */
+/*   Created: 2022/11/06 11:47:58 by ysar              #+#    #+#             */
+/*   Updated: 2022/11/06 11:47:58 by ysar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
+** LIBRARY: N/A
+** SYNOPSIS: count elements of a list
+**
 ** DESCRIPTION:
-** 		Returns 1 if the char is in string, 0 if it's not.
+** 		Counts the number of elements in a list.
 */
 
-int ft_instr(char c, char *str)
+#include <unistd.h>
+#include "libft.h"
+
+int ft_lstsize(t_list *lst)
 {
-	while (*str)
+	size_t count;
+
+	count = 0;
+	while (lst)
 	{
-		if (c == *str)
-			return (1);
-		str++;
+		lst = lst->next;
+		count++;
 	}
-	return (0);
+	return (count);
 }

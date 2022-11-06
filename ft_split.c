@@ -22,11 +22,11 @@ int ft_count_words(char *str, char c)
 	count = 0;
 	while (str[i] != '\0')
 	{
-		while (str[i] != '\0' && ft_instr(str[i], c))
+		while (str[i] != '\0' && ft_instr(str[i], &c))
 			i++;
-		if (str[i] != '\0' && !ft_instr(str[i], c))
+		if (str[i] != '\0' && !ft_instr(str[i], &c))
 			count++;
-		while (str[i] != '\0' && !ft_instr(str[i], c))
+		while (str[i] != '\0' && !ft_instr(str[i], &c))
 			i++;
 	}
 	return (count);
@@ -38,7 +38,7 @@ char *ft_dup_sep(char *str, char c)
 	char *word;
 
 	i = 0;
-	while (str[i] != '\0' && !ft_instr(str[i], c))
+	while (str[i] != '\0' && !ft_instr(str[i], &c))
 		i++;
 	word = (char *)malloc(sizeof(char) * (i + 1));
 	if (!(word))
@@ -61,14 +61,14 @@ char    **ft_split(const char *s, char c)
 	i = 0;
 	while (*s != '\0')
 	{
-		while (*s != '\0' && ft_instr(*s, c))
+		while (*s != '\0' && ft_instr(*s, &c))
 			s++;
-		if (*s != '\0' && !ft_instr(*s, c))
+		if (*s != '\0' && !ft_instr(*s, &c))
 		{
 			arr[i] = ft_dup_sep(s, c);
 			i++;
 		}
-		while (*s != '\0' && !ft_instr(*s, c))
+		while (*s != '\0' && !ft_instr(*s, &c))
 			s++;
 	}
 	arr[i] = 0;

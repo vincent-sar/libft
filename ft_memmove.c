@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 13:05:26 by apuchill          #+#    #+#             */
+/*   Created: 2020/01/27 13:05:26 by ysar@studen          #+#    #+#             */
 /*   Updated: 2022/11/05 18:12:26 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -32,7 +32,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	if (src < dest)
 	{
 		i = len - 1;
-		while (i < len)
+		while (i > 0)
 		{
 			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 			i--;

@@ -11,17 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-int ft_instr(char c, char *str)
-{
-	while (*str)
-	{
-		if (c == *str)
-			return (1);
-		str++;
-	}
-	return (0);
-}
+#include "libft.h"
 
 long	ft_atoi(const char *str)
 {

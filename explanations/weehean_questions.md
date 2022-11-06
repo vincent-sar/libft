@@ -13,3 +13,20 @@ I.e. worse for headers?
 
 You said do one by one so I did.
 
+3. How do you compile/debug the main file into the ft?
+
+
+4. ft_lstlast
+```
+if (!lst)
+	return (0);
+while (lst)
+	lst = lst->next;
+return (lst);
+```
+This should be unnecessary right? Because if it doesn't exist, it would technically be null already.
+
+So return (lst) handled it.
+
+Hmm. Any case we need a failsafe check?
+

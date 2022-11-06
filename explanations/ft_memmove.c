@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
+/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 13:05:26 by apuchill          #+#    #+#             */
-/*   Updated: 2022/11/05 15:13:40 by ysar@studen      ###   ########.fr       */
+/*   Created: 2022/11/06 11:03:02 by ysar              #+#    #+#             */
+/*   Updated: 2022/11/06 11:03:02 by ysar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	main(void)
 	printf("%s\n", ft_memmove(dest3, src3, 2));
 	
 	//=================================================================================
-	//[LEFT THE RIGHT] AND THE PROBLEM OF MEMCOPY IS RESOLVED WITH MEMMOVE THORUGH [RIGHT TO LEFT]
+	//THE PROBLEM OF [LEFT THE RIGHT] MEMCOPY IS RESOLVED WITH MEMMOVE THORUGH [RIGHT TO LEFT]
 
 	//[---- src ----]
     //      [---- dest ---]
