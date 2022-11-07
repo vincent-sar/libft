@@ -4,6 +4,13 @@ We typecast [const char*] with [return (char *)str] because...
 > - return (str) > if no casting can't compile 
 > - returning 'const char *' from a function with result type 'char *' discards qualifiers
 
+## Malloc
+```
+char *str;
+str = malloc(sizeof(char) * n);
+```
+This will do, don't need to recast because in most latest version of C it's already re-casted.
+
 # MAIN FUNCTIONS
 ## ft_atoi
 
