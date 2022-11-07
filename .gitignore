@@ -7,3 +7,6 @@
 */.DS_Store
 *.o
 ./libftTester
+./Libftest
+*/libftTester
+*/Libftest

@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:37:53 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 12:33:02 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 18:10:17 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,20 @@
 
 char	*ft_strchr(const char *str, int ch)
 {
-	while (*str != '\0' && *str != ch)
+	while (*str != '\0' && *str != (char)ch)
 		str++;
-	if (*str == ch)
+	if (*str == (char)ch)
 		return ((char *)str);
 	else
 		return (0);
 }
+
+// #include <stdio.h>
+// int	main()
+// {
+// 	char s[] = "tripouille";
+// 	printf("#1 %p: %p\n", ft_strchr(s, 't'), s);
+// 	printf("#2 %p: %d\n", ft_strchr(s, 'z'), 0);
+// 	 //This would mess up no type casting
+// 	printf("#3 %p: %p\n", ft_strchr(s, 't' + 256), s);
+// }

@@ -11,6 +11,22 @@ str = malloc(sizeof(char) * n);
 ```
 This will do, don't need to recast because in most latest version of C it's already re-casted.
 
+## TESTER SCRIPT TEMPLATE
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int	main()
+{
+	char string[] = "testing var";
+	printf("#1 %p: %p\n", , );
+	printf("#2 %p: %p\n", , );
+	printf("#3 %p: %p\n", , );
+	printf("#4 %p: %p\n", , );
+	printf("#5 %p: %p\n", , );
+}
+```
+
 # BETTER LOOP
 
 ```

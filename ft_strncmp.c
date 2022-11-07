@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:01:28 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 14:08:48 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 18:30:27 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 #include <unistd.h>
 
-int	strncmp(const char *lhs, const char *rhs, size_t count)
+int	ft_strncmp(const char *lhs, const char *rhs, size_t count)
 {
 	unsigned int	i;
 

@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:51:57 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 17:01:13 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 18:57:44 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	*ft_calloc(size_t num, size_t size)
 	size_t	size_amt;
 	void	*array;
 
+	if (num == SIZE_MAX || size == SIZE_MAX)
+		return (0);
 	size_amt = size * num;
 	array = malloc(size_amt);
 	if (!array)
@@ -37,3 +39,33 @@ void	*ft_calloc(size_t num, size_t size)
 	ft_bzero(array, size_amt);
 	return (array);
 }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// void	ft_bzero(void *s, size_t n)
+// {
+// 	ft_memset(s, 0, n);
+// }
+// void	*ft_memset(void *dst, int ch, size_t count)
+// {
+// 	unsigned char	*str;
+// 	str = (unsigned char *)dst;
+// 	if (!dst)
+// 		return (dst);
+// 	while (count-- > 0)
+// 		*str++ = ch;
+// 	return (dst);
+// }
+// int	main()
+// {
+// 	//https://stackoverflow.com/questions/19367881/
+//	  how-much-memory-calloc-and-malloc-can-allocate
+// 	//Max is max size of size_t, so we just get their max size for failsafe
+// 	printf("%p:%p\n",ft_calloc(SIZE_MAX, SIZE_MAX), calloc(SIZE_MAX, SIZE_MAX));
+// 	printf("#2 %p: %p\n", ft_calloc(SIZE_MAX, 1), calloc(SIZE_MAX, 1));
+// 	printf("#3 %p: %p\n", ft_calloc(1, SIZE_MAX), calloc(1, SIZE_MAX));
+// 	printf("#4 %p: %p\n", ft_calloc(100, SIZE_MAX), calloc(100, SIZE_MAX));
+// 	char *string = ft_calloc(1, 10);
+// 	string = 0;
+// }

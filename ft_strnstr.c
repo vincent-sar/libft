@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:35:56 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 16:23:45 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 18:41:41 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!needle)
+	if ((char)(*needle) == '\0')
 		return ((char *)haystack);
 	i = 0;
 	while (haystack[i] != '\0' && i + j < len)
@@ -49,3 +49,18 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int	main()
+// {
+// 	//if (!needle) > if ((char)(*needle) == '\0')
+// 	//NOTE IT SAYS IF IT'S EMPTY STRING. YOU CAN HAVE ADDRESS WITH EMPTY STRING.
+// 	char haystack[30] = "aaabcabcd";
+// 	char needle[10] = "aabc";
+// 	char * empty = (char*)"";
+// 	printf("#1 %p: %p\n", ft_strnstr(empty, "", -1), strnstr(empty, "", -1));
+// 	printf("#2 %p: %p\n", ft_strnstr(empty, "", 0), strnstr(empty, "", 0));
+// 	printf("#3 %p: %p\n", ft_strnstr(haystack, needle, -1), strnstr(haystack, needle, -1));
+// }
