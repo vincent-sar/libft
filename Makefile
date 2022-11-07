@@ -1,6 +1,7 @@
 SRCS		=	ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
+				ft_isspace.c \
 				ft_isalnum.c \
 				ft_isalpha.c \
 				ft_isascii.c \
@@ -50,28 +51,28 @@ DFLAGS		=	-fsanitize=address -g
 DNAME		=	debug.out
 DSRC		=	test/main.c
 
-all: 	$(NAME)
+all: 		$(NAME)
 
-$(NAME):$(OBJS)
-		$(AR) -rcs $(NAME) $(OBJS)
+$(NAME):	$(OBJS)
+			$(AR) -rcs $(NAME) $(OBJS)
 	
 $(DNAME):	$(SRCS) $(SRCS_BONUS)
 			$(CC) $(CFLAGS) $(DFLAGS) $(SRCS) $(SRCS_BONUS) $(DSRC) -o $(DNAME)
 
-debug: $(DNAME)
+debug: 		$(DNAME)
 
-bonus:	$(NAME) $(OBJS_BONUS)
-		$(AR) -rcs $(NAME) $(OBJS_BONUS)
+bonus:		$(NAME) $(OBJS_BONUS)
+			$(AR) -rcs $(NAME) $(OBJS_BONUS)
 
 clean:
-		$(RM) $(OBJS)
+			$(RM) $(OBJS)
 
-fclean: clean
-		$(RM) $(NAME)
+fclean: 	clean
+			$(RM) $(NAME)
 
-re:		fclean all
+re:			fclean all
 
 norm:	
-		norminette $(SRCS) $(SRCS_BONUS)
-	
-.PHONY:	clean norm
+			norminette $(SRCS) $(SRCS_BONUS)
+
+.PHONY:		clean norm

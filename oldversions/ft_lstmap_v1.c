@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_v1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:39:52 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/07 16:39:23 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 16:31:51 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,45 @@
 #include "libft.h"
 #include <stdlib.h>
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+//This is a bad implementation because it would've looped 2 million times..
+//If we have two of them
+
+t_list	**ft_lstclone(t_list *lst, void (*del)(void *))
 {
-	t_list	*start;
+	t_list	**lst_array;
+	t_list	*prev_node;
 	t_list	*node;
 
-	if (!lst || !f)
-		return (0);
-	start = 0;
+	if (!lst)
+		return (NULL);
 	while (lst)
 	{
 		node = ft_lstnew(lst->content);
 		if (!node)
 		{
-			ft_lstclear(&start, del);
-			return (0);
+			if (*lst_array)
+				ft_lstclear(lst_array, del);
+			return (NULL);
 		}
-		ft_lstadd_back(&start, node);
+		if (prev_node)
+			prev_node->next = node;
+		else
+			*lst_array = node;
+		prev_node = node;
 		lst = lst->next;
 	}
-	return (start);
+	return (lst_array);
+}
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	**lst_array;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	lst_array = ft_lstclone(lst, del);
+	if (!lst_array)
+		return (NULL);
+	ft_lstiter(*lst_array, f);
+	return (*lst_array);
 }

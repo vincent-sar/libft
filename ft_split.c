@@ -6,14 +6,14 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 17:34:57 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 15:43:36 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 16:15:59 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static size_t	ft_count_words(char *str, char c)
+static size_t	ft_count_words(const char *str, char c)
 {
 	size_t	count;
 

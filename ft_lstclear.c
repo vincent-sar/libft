@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:13:32 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/07 15:21:23 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 16:30:52 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = hold;
 	}
-	return (NULL);
 }

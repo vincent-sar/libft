@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:51:57 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 15:20:28 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 16:16:33 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void	*ft_strdup(const char *str)
+char	*ft_strdup(const char *str)
 {
 	char	*dst;
 	size_t	len;

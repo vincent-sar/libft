@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 13:04:14 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/07 14:26:39 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 16:25:28 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	count;
-	char	*str;
 
 	if (!s1 || !set)
 		return (0);
