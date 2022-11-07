@@ -61,7 +61,7 @@ $(DNAME):	$(SRCS) $(SRCS_BONUS)
 
 debug: 		$(DNAME)
 
-bonus:		$(NAME) $(OBJS_BONUS)
+bonus:		$(OBJS_BONUS)
 			$(AR) -rcs $(NAME) $(OBJS_BONUS)
 
 clean:
