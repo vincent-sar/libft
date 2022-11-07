@@ -2,7 +2,7 @@ SRCS	= ft_isalpha.c
 OBJS	= ${SRCS:.c=.o}
 INCS	= libft.h
 NAME	= libft.a
-CC		= cc
+CC		= gcc
 LIBC	= ar rcs
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror -I $(INCS)
