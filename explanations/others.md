@@ -11,7 +11,20 @@ str = malloc(sizeof(char) * n);
 ```
 This will do, don't need to recast because in most latest version of C it's already re-casted.
 
-# MAIN FUNCTIONS
+# BETTER LOOP
+
+```
+while (--n > 0)
+while (n-- > 0)
+```
+Is a good way to bypass the need for having another size_t
+
+```
+d1[i] = s1[i--];
+```
+DO NOT DO THIS MAGIC VOODOO SHIT IT FUCKS THINGS UP. Have it in the while loop
+
+# LIBFT MAIN FUNCTIONS
 ## ft_atoi
 
 Real life version = convert only one 1 +-.
