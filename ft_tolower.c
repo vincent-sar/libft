@@ -6,13 +6,13 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:32:20 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 15:35:15 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 17:35:57 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_lower(int ch)
+int	ft_tolower(int ch)
 {
 	if (ch >= 'A' && ch <= 'Z')
 		return (ch + ('a' - 'A'));
