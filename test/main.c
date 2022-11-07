@@ -6,16 +6,15 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:41:48 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 17:03:58 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 20:20:29 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-
-int main(void)
+#include <stdio.h>
+int	main()
 {
-	// char str[] = "abc abcd abcde abcdef";
-	// char **arr = ft_split(str, ' ');
-	int check = ft_isdigit('9');
-	check = 0;
+	printf("#1 %s: %s\n", ft_strjoin("", "42"), "42");
+	printf("#2 %s: %s\n", ft_strjoin("42", ""), "42");
+	printf("#3 %s: %s\n", ft_strjoin("", ""), "");
 }
