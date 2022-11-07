@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:37:53 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 14:26:26 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 16:58:23 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 #include "libft.h"
 #include <unistd.h>
 
-char	*ft_strchr(const char *str, int ch)
+char	*ft_strrchr(const char *str, int ch)
 {
 	size_t	len;
 
