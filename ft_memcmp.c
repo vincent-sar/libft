@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:04:50 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 16:18:34 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 13:31:16 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,29 @@
 
 #include <unistd.h>
 
-int	*ft_memcmp(const void *lhs, const void *rhs, size_t count)
+int	ft_memcmp(const void *lhs, const void *rhs, size_t n)
 {
-	size_t	i;
+	unsigned char	*s1;
+	unsigned char	*s2;
 
-	i = 0;
-	while (i < count)
+	if (n == 0)
+		return (0);
+	s1 = (unsigned char *)lhs;
+	s2 = (unsigned char *)rhs;
+	while (*s1 == *s2 && --n > 0)
 	{
-		if (((unsigned char *)lhs)[i] != ((unsigned char *)rhs)[i])
-			return (((unsigned char *)lhs)[i] - ((unsigned char *)rhs)[i]);
-		i++;
+		++s1;
+		++s2;
 	}
-	return (0);
+	return (*s1 - *s2);
 }
+
+/*
+** int	main()
+** {
+** 	char str1[] = "yoooo";
+** 	char str2[] = "yoopp";
+** 
+** 	int check = ft_memcmp(str1, str2, 5);
+** }
+*/

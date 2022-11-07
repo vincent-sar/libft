@@ -64,3 +64,15 @@ This should be unnecessary right? Because if it doesn't exist, it would technica
 So return (lst) handled it.
 
 Hmm. Any case we need a failsafe check?
+
+## ft_is 
+
+Swapping it into direct return value.
+
+## ft_strncmp
+
+```
+if (lhs[i] == '\0' && rhs[i] == '\0')
+```
+
+Helps to avoid when the string is longer.

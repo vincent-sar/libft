@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:36:23 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 13:07:26 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 12:26:52 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 int	ft_isprint(int ch)
 {
-	if (ch >= 33 && ch <= 126)
-		return (1);
-	else
-		return (0);
+	return (ch >= 33 && ch <= 126);
 }

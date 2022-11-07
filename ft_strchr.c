@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:37:53 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 15:49:30 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 12:33:02 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 char	*ft_strchr(const char *str, int ch)
 {
-	while (*str != 0 && *str != ch)
+	while (*str != '\0' && *str != ch)
 		str++;
 	if (*str == ch)
 		return ((char *)str);

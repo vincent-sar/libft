@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:39:52 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/06 12:39:52 by ysar             ###   ########.fr       */
+/*   Updated: 2022/11/07 15:21:03 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@
 **	element if needed.
 */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
-t_list **ft_lstclone(t_list *lst, void (*del)(void *))
+t_list	**ft_lstclone(t_list *lst, void (*del)(void *))
 {
-	t_list **lst_array;
-	t_list *prev_node;
-	t_list *node;
+	t_list	**lst_array;
+	t_list	*prev_node;
+	t_list	*node;
 
 	if (!lst)
 		return (NULL);
@@ -51,9 +51,10 @@ t_list **ft_lstclone(t_list *lst, void (*del)(void *))
 	return (lst_array);
 }
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list **lst_array;
+	t_list	**lst_array;
+
 	if (!lst || !f || !del)
 		return (NULL);
 	lst_array = ft_lstclone(lst, del);

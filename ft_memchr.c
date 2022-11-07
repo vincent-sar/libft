@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:04:50 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 16:16:20 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 14:19:27 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,23 @@
 
 #include <unistd.h>
 
-void	*ft_memchr(const void *ptr, int ch, size_t count)
+void	*ft_memchr(const void *ptr, int c, size_t count)
 {
-	size_t i;
+	size_t			i;
+	unsigned char	*str;
 
-	i = 0;
-	while (i < count)
-	{
-		if (((unsigned char *)ptr)[i] == (unsigned char)ch)
+	i = -1;
+	str = (unsigned char *)ptr;
+	while (++i < count)
+		if (str[i] == c)
 			return ((void *)(ptr + i));
-		i++;
-	}
 	return (0);
 }
+
+/*
+** int	main()
+** {
+** 	char *check = ft_memchr("checking", 'h', 8);
+** 	int p=0;
+** }
+*/

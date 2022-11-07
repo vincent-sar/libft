@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:36:23 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 13:07:21 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 12:26:44 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 int	ft_isdigit(int ch)
 {
-	if (ch >= '0' && ch <= '9')
-		return (1);
-	else
-		return (0);
+	return (ch >= '0' && ch <= '9');
 }

@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:35:56 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 16:43:47 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 14:26:05 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@
 
 #include <unistd.h>
 
-char	*ft_strstr(const char *str, const char *substr, size_t len)
+char	*ft_strnstr(const char *str, const char *substr, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
-	if (substr[0] == '\0')
+	if (substr == '\0')
 		return ((char *)str);
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i] != '\0' && i + j < len)
 	{
 		j = 0;
 		while (str[i + j] == substr[j] && str[i + j] != '\0' && i + j < len)

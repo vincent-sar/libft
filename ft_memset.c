@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:36:23 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 15:24:57 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 14:00:50 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,22 @@
 
 #include <unistd.h>
 
-void	*memset(void *dest, int ch, size_t count)
+void	*ft_memset(void *dst, int ch, size_t count)
 {
-	size_t	i;
+	unsigned char	*str;
 
-	i = 0;
-	while (i < count)
-		((unsigned char *)dest)[i++] = ch;
-	return (dest);
+	str = (unsigned char *)dst;
+	if (!dst)
+		return (dst);
+	while (count-- > 0)
+		*str++ = ch;
+	return (dst);
 }
+
+/*
+** int	main()
+** {
+** 	char str[] = "checking";
+** 	ft_memset(str, 'a', 0);
+** }
+*/

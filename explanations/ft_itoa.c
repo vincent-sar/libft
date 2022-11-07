@@ -6,87 +6,50 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:01:52 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 18:03:08 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 14:47:35 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_int_strlen(int nbr)
+//This math in for how many digits
+static int	ft_digitslen(int nbr)
 {
-	long nb;
-	int len;
+	size_t	digits;
 
-	//idx 0123
-	//-100\0  < need 4 digit; excluding null
-	nb = nbr;
-
-	//If zero '0', only 1 len '0'
-	if (nb == 0)
-		return (1);
-	
-	//Now, let's start calculating length
-	len = 0;
-
-	//Whenever negative +1 length
-	if (nb < 0)
+	digits = (nbr <= 0); //If it's negative value, or it's negative = 1; else 0
+	while (nbr != 0)
 	{
-		nb *= -1;
-		len += 1;
+		//Be it -123, or 123 > yields 3 digits cuz we divide until 0
+		nbr = nbr / 10;
+		++digits;
 	}
-
-	//Whenever still got digit, +1 len
-	while (nb > 0)
-	{
-		len += 1;
-		nb /= 10;
-	}
-
-	return (len);
+	return (digits);
 }
 
 char	*ft_itoa(int n)
 {
-	char *str;
-	int len;
-	long nb;
-	
-	//Malloc & create size of the length
-	len = ft_int_strlen(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	//printf("test len %d n %d\n", len, n);
-	
-	//If fail to create, return NULL
+	char	*str;
+	int		len;
+	long	nb;
+
+	if (n == 0)
+		return (ft_strdup("0")); //If zero, returns right away.
+	len = ft_digitslen(n);
+	str = malloc(sizeof(char) * (len + 1));
 	if (!(str))
 		return (NULL);
-	str[len] = '\0';  //Terminate ending with null
-	len--; //Move index one before
-	
-	//If zero, return '0'
-	if (n == 0)
-	{
-		str[0] = '0';
-		return (str);
-	}
-
-	//If negative, put negative at first slot
-	nb = n;
+	str[len--] = '\0';
+	nb = n; //Convert it to a long type
 	if (nb < 0)
 	{
 		str[0] = '-';
-		nb *= -1;
+		nb *= -1; //Invert the digit first so we can do division
 	}
-
-	//While still got digit left, store number
 	while (nb > 0)
 	{
-		str[len] = nb % 10 + '0';
-		nb /= 10;
-		len--;
-
-		//123 % 10 = 3; 123 / 10 = 12
-		//12 % 10 = 2; 12 / 10 = 1
-		//1 % 10 = 1; 1/ 10 = 0
+		str[len--] = nb % 10 + '0';
+		nb /= 10; //Conversion from right to left
 	}
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 17:34:57 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 17:59:36 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 13:00:12 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int ft_count_words(char *str, char c)
 	while (str[i] != '\0')
 	{
 		//Skip delimiter/space
-		while (str[i] != '\0' && ft_instr(str[i], &c))
+		while (str[i] != '\0' && ft_strchr(&c, str[i]))
 			i++;
 		//If it's a word after space, count
-		if (str[i] != '\0' && !ft_instr(str[i], &c))
+		if (str[i] != '\0' && !ft_strchr(&c, str[i]))
 			count++;
 		//Skip words
-		while (str[i] != '\0' && !ft_instr(str[i], &c))
+		while (str[i] != '\0' && !ft_strchr(&c, str[i]))
 			i++;
 	}
 	return (count);
@@ -42,10 +42,10 @@ char *ft_dup_sep(char *str, char c)
 
 	//Count how many characters that's not delimiter/space
 	i = 0;
-	while (str[i] != '\0' && !ft_instr(str[i], &c))
+	while (str[i] != '\0' && !ft_strchr(&c, str[i]))
 		i++;
 	//Create a new word with char size
-	word = (char *)malloc(sizeof(char) * (i + 1));
+	word = malloc(sizeof(char) * (i + 1));
 	if (!(word))
 		return (NULL);
 	//Now, duplicate string into word
@@ -62,23 +62,23 @@ char    **ft_split(const char *s, char c)
 
 	count = ft_count_words(s, c);
 	//Create the 2D array based on size
-	arr = (char **)malloc(sizeof(char *) * (count + 1));
+	arr = malloc(sizeof(char *) * (count + 1));
 	if (!(arr))
 		return (NULL);
 	i = 0;
 	while (*s != '\0')
 	{
 		//While it's delimiter, skip
-		while (*s != '\0' && ft_instr(*s, &c))
+		while (*s != '\0' && ft_strchr(&c, *s))
 			s++;
 		//Get the words in 
-		if (*s != '\0' && !ft_instr(*s, &c))
+		if (*s != '\0' && !ft_strchr(&c, *s))
 		{
 			arr[i] = ft_dup_sep(s, c);
 			i++;
 		}
 		//Then, skip the words
-		while (*s != '\0' && !ft_instr(*s, &c))
+		while (*s != '\0' && !ft_strchr(&c, *s))
 			s++;
 	}
 	arr[i] = 0;

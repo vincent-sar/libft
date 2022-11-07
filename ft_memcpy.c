@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:36:23 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 14:41:32 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 13:48:29 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,21 @@
 
 #include <unistd.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t count)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
-	
-	if (!dest && !src)
+	unsigned char	*s1;
+	unsigned char	*d1;
+	size_t			i;
+
+	if (!dst && !src)
 		return (0);
+	s1 = (unsigned char *)src;
+	d1 = (unsigned char *)dst;
 	i = 0;
-	while (i < count)
+	while (i < n)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		d1[i] = s1[i];
 		i++;
 	}
-	return (dest);
+	return (dst);
 }

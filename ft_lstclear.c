@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:13:32 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/06 12:13:32 by ysar             ###   ########.fr       */
+/*   Updated: 2022/11/07 15:21:23 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 **	be set to NULL.
 */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *hold;
-	
-	if (!*lst)
+	t_list	*hold;
+
+	if (!*lst || !lst)
 		return ;
 	while (*lst)
 	{

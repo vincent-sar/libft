@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:31:42 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/06 12:31:42 by ysar             ###   ########.fr       */
+/*   Updated: 2022/11/07 15:21:08 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 **	each element.
 */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

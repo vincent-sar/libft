@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim_v1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 13:04:14 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/06 13:04:14 by ysar             ###   ########.fr       */
+/*   Updated: 2022/11/07 13:00:12 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ char *ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (0);
-	while (*s1 && ft_instr(*s1, set))
+	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	count = ft_strlen(s1) - 1;
-	while (s1[count] && ft_instr(s1[count], set))
+	while (s1[count] && ft_strchr(set, s1[count]))
 		count--;
-	str = (char *)malloc(sizeof(char) * count + 1); //THIS CHUNK CAN BE REPLACED WITH SUBSTRING
+	str = malloc(sizeof(char) * count + 1); //THIS CHUNK CAN BE REPLACED WITH SUBSTRING
 	if (!str)
 		return (NULL);
 	str[count] = '\0';

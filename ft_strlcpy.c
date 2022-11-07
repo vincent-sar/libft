@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:16:19 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 15:54:27 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 14:21:00 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@
 
 #include <unistd.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int				count;
-	unsigned int	i;
+	size_t	count;
+	size_t	i;
 
 	count = 0;
 	i = 0;
@@ -44,10 +44,10 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	{
 		while (src[i] && i < (size - 1))
 		{
-			dest[i] = src[i];
+			dst[i] = src[i];
 			i++;
 		}
-		dest[i] = '\0';
+		dst[i] = '\0';
 	}
 	return (count);
 }

@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 15:22:11 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 15:22:12 by ysar@studen      ###   ########.fr       */
+/*   Created: 2022/11/05 16:44:33 by ysar@studen       #+#    #+#             */
+/*   Updated: 2022/11/07 12:21:03 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <unistd.h>
+#include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+long	ft_atoi(const char *str)
 {
-	long	nb;
+	size_t i;
+	long multiplier;
+	long output;
 
-	nb = n;
-	if (nb < 0)
+	i = 0;
+	while (str[i] != '\0' && ft_strchr("\t\n\v\f\r ", str[i]))
+		i++;
+	if (str[i] == '+')
+		i++;
+	multiplier = 1;
+	if (str[i] == '-')
 	{
-		nb *= -1;
-		ft_putchar_fd('-', fd);
+		multiplier *= -1;
+		i++;
 	}
-	if (nb >= 10)
+	output = 0;
+	while (str[i] != '\0' && ft_strchr("0123456789", str[i]))
 	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putchar_fd('0' + nb % 10, fd);
+		output *= 10;
+		output += str[i] - '0';
+		i++;
 	}
-	else
-		ft_putchar_fd('0' + nb % 10, fd);
+	return (output * multiplier);
 }

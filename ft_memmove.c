@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 13:05:26 by ysar@studen          #+#    #+#             */
-/*   Updated: 2022/11/05 18:12:26 by ysar@studen      ###   ########.fr       */
+/*   Created: 2020/01/27 13:05:26 by ysar@studen       #+#    #+#             */
+/*   Updated: 2022/11/07 16:03:17 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,33 @@
 **
 ** DESCRIPTION:
 ** 		The memmove() function copies n bytes from string s2 to string s1.  The
-**	two strings may overlap; the copy is always done in a non-destructive
+**	two strings may overlap; the copy is always done in a non-d1ructive
 **	manner.
 */
 
 #include <unistd.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	unsigned char	*d1;
+	unsigned char	*s1;
+	int				i;
 
-	if (!dest && !src)
+	if (!dst && !src)
 		return (0);
-	i = 0;
-	if (src < dest)
+	d1 = (unsigned char *)dst;
+	s1 = (unsigned char *)src;
+	if (d1 > s1)
 	{
-		i = len - 1;
-		while (i > 0)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i--;
-		}
+		i = (int)(len);
+		while (i-- >= 0)
+			d1[i] = s1[i];
 	}
 	else
 	{
-		while (i < len)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
+		i = -1;
+		while (i++ < (int)len)
+			d1[i] = s1[i];
 	}
-	return (dest);
+	return (dst);
 }

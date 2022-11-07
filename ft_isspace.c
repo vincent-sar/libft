@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_instr.c                                         :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 17:35:18 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 17:35:55 by ysar@studen      ###   ########.fr       */
+/*   Created: 2022/11/05 11:36:23 by ysar@studen       #+#    #+#             */
+/*   Updated: 2022/11/07 13:07:37 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** DESCRIPTION:
-** 		Returns 1 if the char is in string, 0 if it's not.
-*/
+#include <unistd.h>
 
-int ft_instr(char c, char *str)
+int	ft_isspace(int c)
 {
-	while (*str)
-	{
-		if (c == *str)
-			return (1);
-		str++;
-	}
-	return (0);
+	return (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ');
 }

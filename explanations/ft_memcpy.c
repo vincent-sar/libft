@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:36:23 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 14:49:45 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 13:50:21 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,21 @@
 **	s1 and s2 might overlap should use memmove(3) instead.
 */
 
-void	*ft_memcpy(void *dest, const void *src, size_t count)
+void	*ft_memcpy(void *dst, const void *src, size_t count)
 {
 	size_t	i;
 	
 	//YOU NEED BOTH, IT CAN COPY TO A BLANK LOCATION; OR GIBBERISH FROM BLANK SOURCE
-	//Means the pointer address exist if (dest)
-	if (!dest && !src)
+	//Means the pointer address exist if (dst)
+	if (!dst && !src) //If destination doesn't exist, can copy source still || If source doesn't exist, you copy trash value
 		return (0);
 	i = 0;
 	while (i < count)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
-	return (dest);
+	return (dst);
 }
 
 #include <stdio.h>
@@ -59,14 +59,14 @@ int	main(void)
 	char	dup2[] = "ABCDE";
 
 
-	printf("%s\n", memcpy(dst, src, 6));
-	printf("%s\n", ft_memcpy(dst1, src1, 6));
+	printf("%s\n", memcpy(dst, dst, 6));
+	printf("%s\n", ft_memcpy(dst1, dst1, 6));
 
 	printf("%s\n", memcpy(dst2, src2, 2));
 	printf("%s\n", ft_memcpy(dst3, src3, 2));
 	
 	//Objective 'AB[C'DE] > ABABC
-	//I'm moving to get 'AB[C'DE] [source is ABCDE, destination is at CDE] > ABABC
+	//I'm moving to get 'AB[C'DE] [source is ABCDE, dstination is at CDE] > ABABC
 	
 	//[---- src ----]
     //      [---- dst ---]

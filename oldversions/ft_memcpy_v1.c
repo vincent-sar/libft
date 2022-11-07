@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:36:23 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 14:18:19 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 13:14:16 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 **	s1 and s2 might overlap should use memmove(3) instead.
 */
 
-void	*ft_memcpy(void *dest, const void *src, size_t count)
+void	*ft_memcpy(void *dst, const void *src, size_t count)
 {
 	size_t	i;
 	size_t	j;
@@ -35,25 +35,25 @@ void	*ft_memcpy(void *dest, const void *src, size_t count)
 
 	//UPDATE: I LEARNED THAT BEHAVIOR IS UNDEFINED - DOESN'T MEAN IT'S NULL
 	//IT JUST MEANS VERY CACAT BEHAVIOR. SO, DUNNID TO NULL IT HAI YA.
-	while (((unsigned char *)dest)[i] && ((unsigned char *)src)[j])
+	while (((unsigned char *)dst)[i] && ((unsigned char *)src)[j])
 	{
-		if (dest + i == src + j)
+		if (dst + i == src + j)
 			return (0);
 		i++;
 		j++;
 	}
 	/* CORRECT WAY
-		if (!dest && !src) //YOU NEED BOTH, ELSE IT CAN COPY TO A BLANK LOCATION
+		if (!dst && !src) //YOU NEED BOTH, ELSE IT CAN COPY TO A BLANK LOCATION
 			return (0);
 	*/
 
 	i = 0;
 	while (i < count)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
-	return (dest);
+	return (dst);
 }
 
 #include <stdio.h>

@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:37:53 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 15:59:55 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 14:26:26 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 char	*ft_strchr(const char *str, int ch)
 {
-	size_t len;
+	size_t	len;
 
 	len = ft_strlen(str) - 1;
 	while (len >= 0 && str[len] != ch)

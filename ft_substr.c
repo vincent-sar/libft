@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:51:57 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 17:25:49 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 15:18:55 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,29 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
-	size_t s_len;
+	size_t	s_len;
 
-	str = (char *)malloc(sizeof(char) * len + 1);
-	if (!s || !str)
+	if (!s)
 		return (0);
+	str = malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (0);
+	s_len = ft_strlen(s);
 	if (start + len > s_len)
 		len = s_len - start;
 	ft_memmove(str, s + start, len);
 	str[len] = '\0';
 	return (str);
 }
+
+/*
+** int	main(void)
+** {
+** 	char *string = "checking";
+** 	char *check = ft_substr("checking", 1, 3);
+** 	int o=0;
+** }
+*/

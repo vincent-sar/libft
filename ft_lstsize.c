@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysar <ysar@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 11:47:58 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/06 11:47:58 by ysar             ###   ########.fr       */
+/*   Updated: 2022/11/07 15:22:22 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 ** 		Counts the number of elements in a list.
 */
 
-#include <unistd.h>
 #include "libft.h"
+#include <unistd.h>
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (lst)

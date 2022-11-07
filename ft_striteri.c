@@ -6,16 +6,16 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:14:05 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 18:26:26 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 15:20:19 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <unistd.h>
 
-char *ft_striteri(char *s, char (*f)(unsigned int, char *))
+char	*ft_striteri(char *s, char (*f)(unsigned int, char *))
 {
-	size_t i;
+	size_t	i;
 
 	if (!s || !f)
 		return (0);

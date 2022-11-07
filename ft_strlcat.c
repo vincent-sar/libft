@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:16:19 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/05 15:54:37 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/07 15:16:09 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,27 @@
 #include "libft.h"
 #include <unistd.h>
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	dlen;
-	unsigned int	slen;
+	size_t	i;
+	size_t	j;
+	size_t	dlen;
+	size_t	slen;
 
-	dlen = ft_strlen(dest);
+	dlen = ft_strlen(dst);
 	slen = ft_strlen(src);
+	if (!dst || !src)
+		return (0);
 	if (size == 0 || size <= dlen)
 		return (size + slen);
 	i = 0;
 	j = dlen;
 	while (src[i] != '\0' && i < size - dlen - 1)
 	{
-		dest[j] = src[i];
-		i++;
-		j++;
+		dst[j] = src[i];
+		++i;
+		++j;
 	}
-	dest[j] = '\0';
+	dst[j] = '\0';
 	return (dlen + slen);
 }
