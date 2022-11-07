@@ -22,12 +22,6 @@ Test our function with all the below once done. Otherwise, it's called wasting e
 - https://github.com/Tripouille/libftTester
 - https://github.com/jtoty/Libftest
 
-```
-printf("%s",ft_substr("test",1,6));
-expected : est
-got :test
-```
-
 # Relevant Resources
 1. Linkedlist Videos
 - https://youtube.com/playlist?list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y
