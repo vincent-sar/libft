@@ -12,8 +12,10 @@
 
 #include "../libft.h"
 #include <stdio.h>
+
 int	main()
 {
+	printf("First round\n");
 	printf("#1 %s: %s\n", ft_strjoin("", "42"), "42");
 	printf("#2 %s: %s\n", ft_strjoin("42", ""), "42");
 	printf("#3 %s: %s\n", ft_strjoin("", ""), "");
