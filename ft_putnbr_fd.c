@@ -31,3 +31,13 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd('0' + nb % 10, fd);
 }
+
+// My very elegant code then I realized "fuck, cannot malloc"
+// ```
+// void ft_putnbr_fd(int n, int fd)
+// {
+// 	char *str;
+// 	str = ft_itoa(n);
+// 	ft_putstr_fd(str, fd);
+// }
+// ```

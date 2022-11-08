@@ -39,3 +39,9 @@ int	ft_strncmp(const char *lhs, const char *rhs, size_t count)
 	}
 	return (0);
 }
+
+
+// ```
+// if (lhs[i] == '\0' && rhs[i] == '\0')
+// ```
+// Helps to avoid when the string is longer.

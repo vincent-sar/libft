@@ -29,3 +29,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (str);
 }
+
+// If it's a striteri - notice function parameter = address.
+// > Cuz address, so we know it modifies the source.
+// However, in strmapi - it's not address
+// > So we return the value

@@ -33,3 +33,45 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	dst[len1 + len2 + 1] = '\0';
 	return (dst);
 }
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+size_t	ft_strlen(const char *str)
+{
+	size_t	l;
+	l = 0;
+	while (str[l])
+		l++;
+	return (l);
+}
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char	*d1;
+	unsigned char	*s1;
+	int				i;
+
+	if (!dst && !src)
+		return (0);
+	d1 = (unsigned char *)dst;
+	s1 = (unsigned char *)src;
+	if (d1 > s1)
+	{
+		i = (int)(len);
+		while (--i >= 0)
+			d1[i] = s1[i];
+	}
+	else
+	{
+		i = -1;
+		while (++i < (int)len)
+			d1[i] = s1[i];
+	}
+	return (dst);
+}
+int	main()
+{
+	printf("#1 %s: %s\n", ft_strjoin("", "42"), "42");
+	printf("#2 %s: %s\n", ft_strjoin("42", ""), "42");
+	printf("#3 %s: %s\n", ft_strjoin("", ""), "");
+}

@@ -49,6 +49,7 @@ CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 DFLAGS		=	-fsanitize=address -g
 DNAME		=	debug.out
+DNAME_W		=	debug.exe
 DSRC		=	test/main.c
 
 all: 		$(NAME)
@@ -59,7 +60,12 @@ $(NAME):	$(OBJS)
 $(DNAME):	$(SRCS) $(SRCS_BONUS)
 			$(CC) $(CFLAGS) $(DFLAGS) $(SRCS) $(SRCS_BONUS) $(DSRC) -o $(DNAME)
 
+$(DNAME_W):	$(SRCS) $(SRCS_BONUS)
+			$(CC) $(CFLAGS) $(DFLAGS) $(SRCS) $(SRCS_BONUS) $(DSRC) -o $(DNAME_W)
+
 debug: 		$(DNAME)
+
+debugexe: 	$(DNAME_W)
 
 bonus:		$(OBJS_BONUS)
 			$(AR) -rcs $(NAME) $(OBJS_BONUS)

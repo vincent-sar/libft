@@ -38,12 +38,12 @@ int	ft_memcmp(const void *lhs, const void *rhs, size_t n)
 	return (*s1 - *s2);
 }
 
-/*
-** int	main()
-** {
-** 	char str1[] = "yoooo";
-** 	char str2[] = "yoopp";
-** 
-** 	int check = ft_memcmp(str1, str2, 5);
-** }
-*/
+
+//Once again with memory, don't need to ensure it terminates
+//we may need to chek across allocation; so dunnid check '\0'
+// int	main()
+// {
+// 	char str1[] = "yoooo";
+// 	char str2[] = "yoopp";
+// 	int check = ft_memcmp(str1, str2, 5);
+// }

@@ -22,6 +22,7 @@ long	ft_atoi(const char *str)
 	i = 0;
 	while (str[i] != '\0' && ft_strchr("\t\n\v\f\r ", str[i]))
 		i++;
+	//Invalid cuz: Real life version = convert only one 1 +-.
 	if (str[i] == '+')
 		i++;
 	multiplier = 1;
