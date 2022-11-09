@@ -78,22 +78,6 @@ ft_tolower.c \
 ft_toupper.c
 ```
 
-# Good Coding Habits
-1. Write test (main) before write code. 
-> Ideally, external tester put it at the end.
-
-2. Header file is the thing you update as you include more file.
-
-3. Write the code in a way you comply with norminette 
-> Then only you see whether you missed anything out
-
-4. Don't refer to someone else's code. 
-> Their code is probably shitty.
-
-5. Write own codes first
-
-6. Function prototype isn't right - should take from manual.
-
 # General Code Feedback
 1. Use strchr for instr.
 > Need to invert them 
