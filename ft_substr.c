@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:51:57 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 19:22:58 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 15:19:19 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // {
 // 	char	*dst;
 // 	size_t	len;
-
 // 	len = ft_strlen(str);
 // 	dst = malloc(sizeof(char) * len + 1);
 // 	if (!dst)
