@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:39:52 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/07 16:39:23 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 15:05:15 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*start;
 	t_list	*node;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (0);
 	start = 0;
 	while (lst)
 	{
-		node = ft_lstnew(lst->content);
+		node = ft_lstnew(f(lst->content));
 		if (!node)
 		{
 			ft_lstclear(&start, del);
