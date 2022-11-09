@@ -29,5 +29,9 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		return ;
 	if (lst->content)
 		del(lst->content);
+	free(lst->next);
 	free(lst);
 }
+
+//I forgot free(lst->next) during evaluation, which I understood "ah dangling pointer"
+//Another senior suggested a delone + relink function to make life easier
