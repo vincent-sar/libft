@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 17:34:57 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/09 14:10:12 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 14:20:35 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,12 @@ static size_t	ft_count_words(const char *str, char c)
 	return (count);
 }
 
-char	**ft_split(const char *s, char c)
+void	ft_splitter(const char *s, char **arr, char c)
 {
 	size_t	i;
 	size_t	start_idx;
 	size_t	word;
-	char	**arr;
 
-	if (!s)
-		return (NULL);
-	arr = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!(arr))
-		return (NULL);
 	i = 0;
 	word = 0;
 	while (s[i] != '\0')
@@ -57,5 +51,19 @@ char	**ft_split(const char *s, char c)
 		}
 	}
 	arr[word] = 0;
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**arr;
+
+	if (!s)
+		return (NULL);
+	arr = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!(arr))
+		return (NULL);
+	ft_splitter(s, arr, c);
 	return (arr);
 }
+
+//Why this extra function when can slot everything? norm 25 lines

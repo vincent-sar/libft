@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 11:50:11 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/07 15:21:06 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 14:26:27 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst)
+	if (!lst)
+		return (0);
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }
