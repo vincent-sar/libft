@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:41:48 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/09 14:10:17 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 14:47:00 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,39 @@
 // 	printf("#3 %s: %s\n", ft_strjoin("", ""), "");
 // }
 
-int main()
+// int main()
+// {
+// 	// char **tab = ft_split("tripouille", 0);
+// 	char	**expected = (char*[6]){"split", "this", "for", "me", "!", NULL};
+// 	char *s = "      split       this for   me  !       ";
+// 	char **result = ft_split(s, ' ');
+// 	char *check;
+// 	while (*result)
+// 	{
+// 		check = *result;
+// 		if (strcmp(*result, *expected))
+// 		{
+// 			s = "failed";
+// 		}
+// 		result++;
+// 		expected++;
+// 	}
+// }
+
+int	main()
 {
-	// char **tab = ft_split("tripouille", 0);
-	char	**expected = (char*[6]){"split", "this", "for", "me", "!", NULL};
-	char *s = "      split       this for   me  !       ";
-	char **result = ft_split(s, ' ');
-	char *check;
-	while (*result)
+	t_list	*l = NULL;
+	t_list	*expected = NULL;
+	t_list	*actual = NULL;
+	t_list *n = ft_lstnew(strdup("OK"));
+	ft_lstadd_back(&l, n);
+	if (l == n && !strcmp(l->content, "OK"))
 	{
-		check = *result;
-		if (strcmp(*result, *expected))
-		{
-			s = "failed";
-		}
-		result++;
-		expected++;
+		free(l->next);
+		free(l);
+		printf("Success");
 	}
+	free(l->next);
+	free(l);
+	actual = expected;
 }
