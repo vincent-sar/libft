@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:41:48 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/09 15:03:03 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 16:47:58 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,26 +60,38 @@
 // 	printf("Failed didn't enter above");
 // }
 
-int				__delNum = 0;
-void			lstdel_f(void *lst) {
-	(void)lst;
-	__delNum++;
-}
-void *		lstmap_f(void *content) {
-	(void)content;
-	return ("OK !");
-}
-int main()
-{
-	t_list	*l = lstnew(strdup(" 1 2 3 "));
-	t_list	*ret;
+// int				__delNum = 0;
+// void			lstdel_f(void *lst) {
+// 	(void)lst;
+// 	__delNum++;
+// }
+// void *		lstmap_f(void *content) {
+// 	(void)content;
+// 	return ("OK !");
+// }
+// int main()
+// {
+// 	t_list	*l = lstnew(strdup(" 1 2 3 "));
+// 	t_list	*ret;
 
-	l->next = lstnew(strdup("ss"));
-	l->next->next = lstnew(strdup("-_-"));
-	// ret = ft_lstmap(l, lstmap_f, NULL);  // del may be necessary to use
-	ret = ft_lstmap(l, lstmap_f, lstdel_f); // or lstdelone_f
-	if (!strcmp(ret->content, "OK !") && !strcmp(ret->next->content, "OK !") && !strcmp(ret->next->next->content, "OK !") && !strcmp(l->content, " 1 2 3 ") && !strcmp(l->next->content, "ss") && !strcmp(l->next->next->content, "-_-"))
-		printf("Success");
-	SET_DIFF(" 1 2 3 ", l->content);
-	printf("Failed");
+// 	l->next = lstnew(strdup("ss"));
+// 	l->next->next = lstnew(strdup("-_-"));
+// 	// ret = ft_lstmap(l, lstmap_f, NULL);  // del may be necessary to use
+// 	ret = ft_lstmap(l, lstmap_f, lstdel_f); // or lstdelone_f
+// 	if (!strcmp(ret->content, "OK !") && !strcmp(ret->next->content, "OK !") && !strcmp(ret->next->next->content, "OK !") && !strcmp(l->content, " 1 2 3 ") && !strcmp(l->next->content, "ss") && !strcmp(l->next->next->content, "-_-"))
+// 		printf("Success");
+// 	SET_DIFF(" 1 2 3 ", l->content);
+// 	printf("Failed");
+// }
+
+int	main()
+{
+	//https://stackoverflow.com/questions/19367881/how-much-memory-calloc-and-malloc-can-allocate
+	//Max is max size of size_t, so we just get their max size for failsafe
+	printf("%p:%p\n",ft_calloc(SIZE_MAX, SIZE_MAX), calloc(SIZE_MAX, SIZE_MAX));
+	printf("#2 %p: %p\n", ft_calloc(SIZE_MAX, 1), calloc(SIZE_MAX, 1));
+	printf("#3 %p: %p\n", ft_calloc(1, SIZE_MAX), calloc(1, SIZE_MAX));
+	printf("#4 %p: %p\n", ft_calloc(100, SIZE_MAX), calloc(100, SIZE_MAX));
+	char *string = ft_calloc(1, 10);
+	string = 0;
 }
