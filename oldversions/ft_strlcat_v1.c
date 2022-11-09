@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat_v1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:16:19 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/09 12:33:46 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 12:22:42 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@
 #include "libft.h"
 #include <unistd.h>
 
+//Wee Hean said not elegant when use number, so we're shifting to pointer
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
@@ -40,11 +42,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dlen;
 	size_t	slen;
 
-	if (size == 0)
-		return (0);
 	dlen = ft_strlen(dst);
 	slen = ft_strlen(src);
-	if (size <= dlen)
+	if (!dst || !src)
+		return (0);
+	if (size == 0 || size <= dlen)
 		return (size + slen);
 	i = 0;
 	j = dlen;
@@ -58,22 +60,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (dlen + slen);
 }
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
-// size_t	ft_strlen(const char *str)
-// {
-// 	size_t	l;
-// 	l = 0;
-// 	while (str[l])
-// 		l++;
-// 	return (l);
-// }
-// int	main()
-// {
-// 	char b[0xF] = "nyan !";
-// 	ft_strlcat(((void *)0), b, 0);
-// }
-// NEED TO Segfault
-// if (!dst || !src)
-// 		return (0);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+size_t	ft_strlen(const char *str)
+{
+	size_t	l;
+	l = 0;
+	while (str[l])
+		l++;
+	return (l);
+}
+int	main()
+{
+	char b[0xF] = "nyan !";
+	ft_strlcat(((void *)0), b, 0);
+}

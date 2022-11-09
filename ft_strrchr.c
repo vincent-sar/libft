@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:37:53 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 18:35:44 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 12:07:05 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ char	*ft_strrchr(const char *str, int ch)
 {
 	int	len;
 
-	if (!str)
-		return (0);
 	len = ft_strlen(str);
 	while (len >= 0 && str[len] != (char)ch)
 		len--;
@@ -63,3 +61,6 @@ char	*ft_strrchr(const char *str, int ch)
 // 	printf("#5 %p: %p\n", ft_strrchr(s3, 0), strrchr(s3, 0));
 // 	free(empty);
 // }
+// Similarly, this thing need to segfault
+// if (!str)
+//		return (0);

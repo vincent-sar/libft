@@ -23,6 +23,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len1;
 	size_t	len2;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	dst = malloc(sizeof(char) * (len1 + len2 + 1));
@@ -70,8 +72,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // }
 // int	main()
 // {
-// 	printf("First round\n");
-// 	printf("#1 %s: %s\n", ft_strjoin("", "42"), "42");
-// 	printf("#2 %s: %s\n", ft_strjoin("42", ""), "42");
-// 	printf("#3 %s: %s\n", ft_strjoin("", ""), "");
+// 	// printf("First round\n");
+// 	// printf("#1 %s: %s\n", ft_strjoin("", "42"), "42");
+// 	// printf("#2 %s: %s\n", ft_strjoin("42", ""), "42");
+// 	// printf("#3 %s: %s\n", ft_strjoin("", ""), "");
+// 	// printf("Second round\n")
+// 	char	*s1 = "my favorite animal is";
+// 	char	*s2 = " ";
+// 	char	*s3 = "the nyancat";
+// 	char	*res = ft_strjoin(ft_strjoin(s1, s2), s3);
+// 	int 	error = strcmp(res, "my favorite animal is the nyancat");
+// 	error = 0;
 // }

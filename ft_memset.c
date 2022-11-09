@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:36:23 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 20:08:39 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 12:20:50 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ void	*ft_memset(void *dst, int ch, size_t count)
 	unsigned char	*str;
 
 	str = (unsigned char *)dst;
-	if (!dst)
-		return (dst);
 	while (count-- > 0)
 		*str++ = ch;
 	return (dst);
@@ -42,3 +40,6 @@ void	*ft_memset(void *dst, int ch, size_t count)
 // 	 //This would mess up no type casting
 // 	printf("#3 %p: %p\n", ft_strchr(s, 't' + 256), s);
 // }
+// This thing need to segfault with null, removed:
+// 	if (!dst)
+//		return (dst);

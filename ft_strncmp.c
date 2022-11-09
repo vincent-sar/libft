@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:01:28 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 18:30:27 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 12:11:50 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,13 @@ int	ft_strncmp(const char *lhs, const char *rhs, size_t count)
 	while (i < count)
 	{
 		if (lhs[i] != rhs[i])
-			return (lhs[i] - rhs[i]);
+			return ((unsigned char)lhs[i] - (unsigned char)rhs[i]);
 		if (lhs[i] == '\0' && rhs[i] == '\0')
 			return (0);
 		i++;
 	}
 	return (0);
 }
-
 
 // ```
 // if (lhs[i] == '\0' && rhs[i] == '\0')

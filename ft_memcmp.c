@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 16:04:50 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 13:31:16 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 12:07:38 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	ft_memcmp(const void *lhs, const void *rhs, size_t n)
 	}
 	return (*s1 - *s2);
 }
-
 
 //Once again with memory, don't need to ensure it terminates
 //we may need to chek across allocation; so dunnid check '\0'
