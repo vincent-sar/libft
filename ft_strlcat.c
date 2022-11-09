@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:16:19 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/09 12:33:46 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 13:26:22 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dlen;
 	size_t	slen;
 
-	if (size == 0)
-		return (0);
-	dlen = ft_strlen(dst);
 	slen = ft_strlen(src);
+	if (size == 0)
+		return (slen);
+	dlen = ft_strlen(dst);
 	if (size <= dlen)
 		return (size + slen);
 	i = 0;
@@ -71,9 +71,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // }
 // int	main()
 // {
-// 	char b[0xF] = "nyan !";
-// 	ft_strlcat(((void *)0), b, 0);
+// 	char * src = (char *)"AAAAAAAAA";
+// 	char dest[] = "B";
+// 	size_t check1 = ft_strlcat(dest, src, 0);
+// 	unsigned long check2 = strlen(src);
+// 	// char b[0xF] = "nyan !";
+// 	// ft_strlcat(((void *)0), b, 0);
 // }
-// NEED TO Segfault
-// if (!dst || !src)
-// 		return (0);
+// // NEED TO Segfault
+// // if (!dst || !src)
+// // 		return (0);
+// // I learned this from a tester
+// if (size == 0)
+// 		return (ft_strlen(src));

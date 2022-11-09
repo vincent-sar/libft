@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:14:05 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 16:19:28 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 13:16:33 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	size_t	i;
 
+	if (!s || !f)
+		return (0);
 	str = ft_strdup(s);
-	if (!str || !s || !f)
+	if (!str)
 		return (0);
 	i = 0;
 	while (str[i])
