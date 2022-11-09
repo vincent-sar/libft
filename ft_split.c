@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 17:34:57 by ysar@studen       #+#    #+#             */
-/*   Updated: 2022/11/07 16:15:59 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 14:10:12 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	**ft_split(const char *s, char c)
 	size_t	word;
 	char	**arr;
 
+	if (!s)
+		return (NULL);
 	arr = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!(arr))
 		return (NULL);
@@ -54,6 +56,6 @@ char	**ft_split(const char *s, char c)
 			arr[word++] = ft_substr(s, start_idx, i - start_idx);
 		}
 	}
-	arr[i] = 0;
+	arr[word] = 0;
 	return (arr);
 }
