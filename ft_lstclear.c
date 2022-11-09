@@ -6,7 +6,7 @@
 /*   By: ysar@student.42kl.edu.my <ysar>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:13:32 by ysar              #+#    #+#             */
-/*   Updated: 2022/11/09 14:55:39 by ysar@studen      ###   ########.fr       */
+/*   Updated: 2022/11/09 14:57:36 by ysar@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*hold;
 
-	if (!*lst || !lst || !del)
+	if (!lst || !*lst || !del)
 		return ;
 	while (*lst)
 	{
